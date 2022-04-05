@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toTopOf="@id/animal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Dog" />
+        tools:text="Pig" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/animal"
