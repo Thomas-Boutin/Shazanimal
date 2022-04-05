@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue sur Shazanimal"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:gravity="center"
+        android:breakStrategy="simple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/pig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🐷"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toStartOf="@id/dog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcome" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🐶"
+        android:layout_marginTop="50dp"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/pig"
+        app:layout_constraintTop_toBottomOf="@id/welcome" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🐱"
+        android:layout_marginTop="50dp"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toStartOf="@id/chicken"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pig" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/chicken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🐔"
+        android:layout_marginTop="50dp"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cat"
+        app:layout_constraintTop_toBottomOf="@id/pig" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="@string/start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

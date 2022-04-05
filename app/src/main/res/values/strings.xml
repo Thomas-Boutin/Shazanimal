@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Shazanimal</string>
+    <string name="start">Démarrer</string>
+    <string name="stop_analysis">Arrêter l\'analyse</string>
+    <string name="result_percentage">%f%%</string>
+</resources>
