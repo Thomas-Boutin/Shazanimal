@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="animal_face">150sp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium">20dp</dimen>
+    <dimen name="margin_big">30dp</dimen>
+    <dimen name="margin_extra">50dp</dimen>
+    <dimen name="text_size_big">60sp</dimen>
+    <dimen name="animal_face_small">70sp</dimen>
+    <dimen name="animal_face_medium">90sp</dimen>
+    <dimen name="animal_face_big">150sp</dimen>
+    <dimen name="text_size_medium">50sp</dimen>
+    <dimen name="card_view_elevation">3dp</dimen>
+    <dimen name="card_view_radius">20dp</dimen>
 </resources>

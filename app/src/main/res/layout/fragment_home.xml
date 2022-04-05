@@ -8,12 +8,13 @@
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenue sur Shazanimal"
-        android:layout_marginTop="50dp"
-        android:textStyle="bold"
-        android:textSize="50sp"
-        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_extra"
         android:breakStrategy="simple"
+        android:gravity="center"
+        android:text="@string/welcome"
+        android:textSize="@dimen/text_size_big"
+        android:textStyle="bold"
+        android:paddingHorizontal="@dimen/margin_big"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,32 +23,33 @@
         android:id="@+id/pig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🐷"
-        android:layout_marginTop="50dp"
+        android:text="@string/pig"
+        android:textSize="@dimen/animal_face_small"
         android:textStyle="bold"
-        android:textSize="70sp"
+        app:layout_constraintBottom_toTopOf="@id/cat"
         app:layout_constraintEnd_toStartOf="@id/dog"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcome" />
+        app:layout_constraintTop_toBottomOf="@id/welcome"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="@dimen/margin_big"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/dog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🐶"
-        android:layout_marginTop="50dp"
-        android:textSize="70sp"
+        android:text="@string/dog"
+        android:textSize="@dimen/animal_face_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/pig"
-        app:layout_constraintTop_toBottomOf="@id/welcome" />
+        app:layout_constraintTop_toTopOf="@id/pig" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🐱"
-        android:layout_marginTop="50dp"
-        android:textSize="70sp"
+        android:text="@string/cat"
+        android:textSize="@dimen/animal_face_small"
+        app:layout_constraintBottom_toTopOf="@id/start"
         app:layout_constraintEnd_toStartOf="@id/chicken"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pig" />
@@ -56,18 +58,17 @@
         android:id="@+id/chicken"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🐔"
-        android:layout_marginTop="50dp"
-        android:textSize="70sp"
+        android:text="@string/chicken"
+        android:textSize="@dimen/animal_face_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cat"
-        app:layout_constraintTop_toBottomOf="@id/pig" />
+        app:layout_constraintTop_toTopOf="@id/cat" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="@dimen/margin_big"
         android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

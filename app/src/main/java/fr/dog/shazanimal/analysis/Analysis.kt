@@ -1,10 +1,10 @@
 package fr.dog.shazanimal.analysis
 
-import fr.dog.shazanimal.AvailableAnimal
+import fr.dog.shazanimal.AnalyzableAnimal
 import org.tensorflow.lite.support.audio.TensorAudio
 import org.tensorflow.lite.task.audio.classifier.AudioClassifier
 
-class Analysis private constructor(val animal: AvailableAnimal, val score: Float) {
+class Analysis private constructor(val animal: AnalyzableAnimal, val score: Float) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
@@ -25,7 +25,7 @@ class Analysis private constructor(val animal: AvailableAnimal, val score: Float
 
     companion object {
         suspend fun createFrom(
-            animal: AvailableAnimal,
+            animal: AnalyzableAnimal,
             classifier: AudioClassifier,
             tensorAudio: TensorAudio
         ): Analysis {

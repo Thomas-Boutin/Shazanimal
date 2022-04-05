@@ -13,22 +13,35 @@ class MainViewModel : ViewModel() {
     val analysis: List<Analysis>
         get() = _analysis
 
-    fun nextAnimal() = AvailableAnimal
-        .values()
-        .first {
-            !_analysis.map(Analysis::animal).contains(it)
-        }
+    fun nextAnimal() = analyzableAnimals().first { it.hasNotBeenAnalyzed() }
 
-    fun hasOneAnalysisLeft() = !_analysis.map(Analysis::animal).containsAll(AvailableAnimal.values().toList())
+    fun hasAtLeastOneAnalysisLeft() = analyzableAnimals().size != analysis.size
 
     suspend fun addAnalysis(
-        animal: AvailableAnimal,
+        animal: AnalyzableAnimal,
         classifier: AudioClassifier,
         tensorAudio: TensorAudio
     ) = withContext(viewModelScope.coroutineContext + Dispatchers.IO) {
+        storeNewAnalysis(animal, classifier, tensorAudio)
+        sortAnalysisByScoreDescending()
+    }
+
+    private fun sortAnalysisByScoreDescending() {
+        _analysis.sortByDescending { it.score }
+    }
+
+    private suspend fun storeNewAnalysis(
+        animal: AnalyzableAnimal,
+        classifier: AudioClassifier,
+        tensorAudio: TensorAudio
+    ) {
         Analysis
             .createFrom(animal, classifier, tensorAudio)
             .let(_analysis::add)
-        _analysis.sortByDescending { it.score }
     }
+
+    private fun analyzableAnimals() = AnalyzableAnimal
+        .values()
+    private fun AnalyzableAnimal.hasNotBeenAnalyzed() = this !in alreadyAnalyzedAnimals()
+    private fun alreadyAnalyzedAnimals() = _analysis.map(Analysis::animal)
 }

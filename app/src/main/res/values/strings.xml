@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Shazanimal</string>
     <string name="start">Démarrer</string>
-    <string name="stop_analysis">Arrêter l\'analyse</string>
+    <string name="stop_recording">Arrêter l\'enregistrement</string>
     <string name="result_percentage">%f%%</string>
+    <string name="start_recording">Démarrer l\'enregistrement</string>
+    <string name="welcome">Bienvenue sur Shazanimal</string>
+    <string name="chicken">🐔</string>
+    <string name="cat">🐱</string>
+    <string name="dog">🐶</string>
+    <string name="pig">🐷</string>
+    <string name="results">Résultats</string>
 </resources>
