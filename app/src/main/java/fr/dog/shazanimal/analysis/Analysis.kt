@@ -24,7 +24,7 @@ class Analysis private constructor(val animal: AnalyzableAnimal, val score: Floa
     }
 
     companion object {
-        suspend fun createFrom(
+        fun createFrom(
             animal: AnalyzableAnimal,
             classifier: AudioClassifier,
             tensorAudio: TensorAudio
